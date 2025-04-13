@@ -65,7 +65,7 @@ function App() {
           <h2>Movie Info App</h2>
         </div>
         <div className="search">
-          <input type="text" ref={idk} placeholder="Search for a movie" />
+          <input type="text" ref={idk} placeholder="Made by Vaibhav, Search a movie here..." />
           <button onClick={fetchData}>
             Search
             <div className={ loader==true ? "loader" : "none"}></div>
