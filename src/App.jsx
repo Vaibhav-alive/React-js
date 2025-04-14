@@ -6,7 +6,7 @@ import './App.css'
 let api = 'https://www.omdbapi.com/?apikey=61e576a4&t='
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Page from './Component/Page'
-
+let posterapi = 'https://img.omdbapi.com/?apikey=61e576a4&t='
 function App() {
   let idk = useRef()
   
@@ -29,6 +29,10 @@ function App() {
   const [type, setType] = useState('');
   const [totalSeasons, setTotalSeasons] = useState('');
   const [response, setResponse] = useState('');
+
+
+
+
   function fetchData(){
     let moviename = idk.current.value
     setLoader(true) 
@@ -40,22 +44,21 @@ function App() {
       setimdb(data.imdbRating)
       setYear(data.Year)
       setRated(data.Rated);
-    setReleased(data.Released);
-    setRuntime(data.Runtime);
-    setGenre(data.Genre);
-    setDirector(data.Director);
-    setWriter(data.Writer);
-    setActors(data.Actors);
-    setPlot(data.Plot);
-    setLanguage(data.Language);
-    setCountry(data.Country);
-    setAwards(data.Awards);
-    setType(data.Type);
-    setTotalSeasons(data.TotalSeasons);
-    setResponse(data.Response);
+      setReleased(data.Released);
+      setRuntime(data.Runtime);
+      setGenre(data.Genre);
+      setDirector(data.Director);
+      setWriter(data.Writer);
+      setActors(data.Actors);
+      setPlot(data.Plot);
+      setLanguage(data.Language);
+      setCountry(data.Country);
+      setAwards(data.Awards);
+      setType(data.Type);
+      setTotalSeasons(data.TotalSeasons);
+      setResponse(data.Response);
       setLoader(false)
-      console.log(data)
-      
+      console.log(data) 
     })
   }
   return(

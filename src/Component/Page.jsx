@@ -2,6 +2,28 @@ function Page(props){
   return (
     <div className="cont">
       <div className="desc-box">
+        <style jsx>{`
+            .desc-box{
+              position: relative;
+              background-image: url(${props.poster});
+              background-size: cover;
+              background-position: center;
+            }
+            .desc-box::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value for darkness */
+              z-index: 1; /* Ensure the overlay is above the background */
+            }
+
+            .desc-box > * {
+              position: relative;
+              z-index: 2; 
+          `}</style>
           <div className="name"><h1>{props.title}</h1></div>
           <div className="flex">
             <div className="f9">
