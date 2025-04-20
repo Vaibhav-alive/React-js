@@ -179,14 +179,19 @@ input:focus
 }
 .main{
   width: 100%;
+  padding: 10px;
+  display: flex;
 }
 .cont{
   display: flex;
-  justify-content: space-between;
+  
   padding:30px;
   gap: 10px;
   margin-top: 10px;
   border-radius: 12px;
+ 
+  flex-wrap: wrap;
+  justify-content: center;
   /* border: 1px solid white; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -198,11 +203,30 @@ input:focus
 }
 .desc-box{
   letter-spacing: 2px;
-  width: 73%;
+  width: 100%;
   padding: 4px;
   height: fit-content;
   border-radius: 12px;
   box-shadow: inset rgba(0, 0, 0, 0.25) 0px 4px 55px, inset rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+  display: flex;
+  justify-content:space-around /* Ensure the content is above the overlay */
+}
+.f-prevent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.desc-box::before{
+  border-radius: 12px;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the alpha value for darkness */
+  z-index: 1; /* Ensure the overlay is above the background */
 }
 .desc-box h1{
   font-size: 40px;
@@ -227,7 +251,15 @@ input:focus
   padding: 8px;
   
 }
-
+.poster{
+  display: flex;
+  justify-content: center;
+  padding: 22px
+}
+.poster img{
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: 300px;
+}
 .s9{
   width: 50%;
   letter-spacing: 2px;
@@ -243,4 +275,35 @@ input:focus
   border-radius: 12px;
   box-shadow: inset rgba(0, 0, 0, 0.25) 0px 4px 55px, inset rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   
+}
+.t-index{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.t-flex{
+  
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+.t-flex img{
+  border-radius: 12px;
+}
+.t-desc{
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.name{
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+}
+.release{
+  font-weight: bolder;
 }
