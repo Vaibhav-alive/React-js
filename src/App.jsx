@@ -1,10 +1,8 @@
 import { useState, useRef} from 'react'
 import './App.css'
 let api = 'https://www.omdbapi.com/?apikey=61e576a4&s='
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Home from './Component/Home'
 import Thumb from './Component/Thumb'
-import Page from './Component/Page'
-
 function App() {
   let idk = useRef()
   let [movies, setMovies] = useState([])
@@ -33,9 +31,6 @@ function App() {
     <>
       
       <section className="navbar">
-            <div className="title">
-                <h2>Movie Info App</h2>
-            </div>
             <div className="search">
                 <input type="text" ref={idk} placeholder="Made by Vaibhav, Search a movie here..." />
                 <button onClick={fetchData}>
@@ -43,7 +38,7 @@ function App() {
                     <div className={ loader==true ? "loader" : "none"}></div>
                 </button>
             </div>
-        </section>
+      </section>
       <section className="main">
         {
           movies.map((movie)=>(
