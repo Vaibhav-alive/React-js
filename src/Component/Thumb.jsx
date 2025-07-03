@@ -3,7 +3,6 @@ function Thumb( {movie} ){
     
     return(
             <div className="t-index">
-                {movie.map((movie)=>(
                     <div className="t-flex">
                         <img src={movie.Poster} alt="" />
                         <div className="t-desc">
@@ -12,7 +11,7 @@ function Thumb( {movie} ){
                         </div>
                     </div>
                     
-                ))}
+              
             </div>
     )
 }
