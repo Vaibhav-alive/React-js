@@ -40,7 +40,16 @@ button {
   justify-content: center;
   gap: 9px;
 }
+.vid{
+  align-self: center;
+}
+.vid iframe{
+  width: 100%;
+  aspect-ratio: 16 / 9 ;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -358,6 +367,34 @@ input:focus
   padding: 1rem;
   margin:2rem auto ;
 }
+ @media (max-width: 768px) {
+            .movie-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .movie-poster {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .movie-title {
+                font-size: 1.8rem;
+            }
+            
+            .btns{
+                flex-direction: column;
+            }
+            
+            .info {
+                grid-template-columns: 1fr;
+            }
+        }
 .movie-poster{
   /* overflow: hidden; */
   width: fit-content;

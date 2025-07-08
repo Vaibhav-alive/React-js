@@ -6,6 +6,7 @@ function Moviedetail() {
     const [vid, setVid] = useState();
     const [title, setTitle] = useState();
     const { id } = useParams();
+    const [plot, setPlot] = useState([])
     const [genre, setGenrne] = useState();
     const name = `${title} + official trailer`;
     const [movies, setMovies] = useState(null);
@@ -22,6 +23,11 @@ function Moviedetail() {
                 const genrearray = data.Genre.split(",").map((g) => g.trim());
                 setGenrne(genrearray);
             });
+        fetch(`https://www.omdbapi.com/?apikey=61e576a4&i=${id}&plot=full`).then((plot)=>{
+            return plot.json();
+        }).then((plot)=>{
+            setPlot(plot)
+        })
     }, [id]);
     fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(
@@ -35,12 +41,14 @@ function Moviedetail() {
             console.log(res);
             const videoId = res.items[0].id.videoId;
             setTitle(movies.Title);
-
             setVid(`https://www.youtube.com/embed/${videoId}`);
         });
     if (!movies) return <div>Loading...</div>;
     // if (!vid) return <div>Loading...</div>;
     return (
+        <>
+        
+       
         <div className="movie-details">
            
             <div className="movie-poster">
@@ -62,7 +70,7 @@ function Moviedetail() {
                     </div>
                 </div>
                 <div className="d-plot">
-                    <p>{movies.Plot}</p>
+                    <p>{plot.Plot}</p>
                 </div>
                 <div className="info">
                     <div className="stat-item">
@@ -88,13 +96,15 @@ function Moviedetail() {
                     </div>
                 </div>
                 <div className="btns">
-                    <button className="watch">Watch Now</button>
+                    <button className="watch">Watch Trailer Below!!!</button>
                 </div>
             </div>
-            <div className="vid">
-                <iframe src={vid} frameborder="0"></iframe>
-            </div>
+            
         </div>
+        <div className="vid">
+                <iframe src={vid} frameborder="0"></iframe>
+        </div>
+        </>
     );
 }
 
