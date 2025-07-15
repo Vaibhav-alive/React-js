@@ -6,7 +6,7 @@ import Search from './Component/Search'
 import Home from './Component/homethumb'
 
 function App() {
-  let [loader, setLoader] = useState(true)
+  let [loader, setLoader] = useState(false)
   return (
     <>
     <div className="flex">
