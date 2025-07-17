@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./homethumb";
+import Esc from "./Esc";
 function Moviedetail() {
     const [vid, setVid] = useState();
     const [title, setTitle] = useState();
@@ -44,7 +45,7 @@ function Moviedetail() {
     // if (!vid) return <div>Loading...</div>;
     return (
         <>
-
+            <Esc />
            <div className="nav">
                 <Home />
            </div>

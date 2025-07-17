@@ -32,11 +32,15 @@ button {
   padding: 6px;
   /* width: fit-content; */
   font-size: 1.5em;
-  /* font-weight: 500; */
+  font-weight: 500;
   font-family: inherit;
   background-color:rgb(36, 35, 35);
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: background-color 0.25s ease-in-out;
+}
+button:hover{
+  background-color: white;
+  color: black;
 }
 .vid{
   align-self: center;
@@ -260,6 +264,7 @@ input:focus
 .t-desc{
   margin-top: 16px;
   display: flex;
+  text-align: center;
   justify-content: space-between;
 }
 .name{
@@ -451,4 +456,14 @@ h1{
 }
 .d-none{
   display: none;
+}
+.esc{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.esc button{
+  padding: 7px 20px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }

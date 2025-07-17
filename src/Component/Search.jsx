@@ -3,6 +3,7 @@ import { useParams} from 'react-router';
 import { Link, Route,Routes } from 'react-router';
 import Thumb from './Thumb'
 import Home from './homethumb';
+import Esc from './Esc';
 
 function Search({setLoader}) {
   let {name} = useParams()
@@ -27,12 +28,12 @@ function Search({setLoader}) {
     }).then((res)=>{
       if (res.Search) {
         const sorted = res.Search.sort((a,b)=>{
-          const yearA = parseInt(a.year)
-          const yearB = parseInt(b.year)
+          const yearA = parseInt(a.Year)
+          const yearB = parseInt(b.Year)
           return yearB - yearA ;
         })
         setMovie(sorted)
-        
+        setLoader(false)
       }
       
     })
@@ -41,9 +42,12 @@ function Search({setLoader}) {
   function loadmore(){
     setPage(prev => prev+1)
   }
+
+  if (!movie) return <div>Loading....</div>;
   return (
     <>
-  <Home />
+    <Esc />
+    <Home />
       <section className="main">
         
         {
