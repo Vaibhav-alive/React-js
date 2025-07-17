@@ -233,7 +233,7 @@ input:focus
   
 }
 .t-index{
-  width: 400px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -287,7 +287,9 @@ input:focus
 .h-flex{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   flex-direction: row;
+  margin-bottom: 12px ; 
 }
 .flex{
   display: flex;
