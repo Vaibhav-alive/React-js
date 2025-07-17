@@ -8,20 +8,39 @@ function Search({setLoader}) {
   let {name} = useParams()
   let [movie, setMovie] = useState([])
   let apikey = '38ae9202'
-   
+  let [page, setPage] = useState(1)
+
   useEffect(() => {
     setLoader(true)
-    fetch(`https://omdbapi.com/?apikey=${apikey}&s=${name}`).then((data)=>{
+    fetch(`https://omdbapi.com/?apikey=${apikey}&s=${name}&page=${page}`).then((data)=>{
       return data.json()
     }).then((data)=>{
-     
-      setMovie(data.Search)
+      setMovie( prev => [...prev, ...data.Search])
       setLoader(false)
     })
-   
+
+  },[page])
+  useEffect(()=>{
+    setLoader(true)
+    fetch(`https://omdbapi.com/?apikey=${apikey}&s=${name}&page=1`).then((res)=>{
+      return res.json()
+    }).then((res)=>{
+      if (res.Search) {
+        const sorted = res.Search.sort((a,b)=>{
+          const yearA = parseInt(a.year)
+          const yearB = parseInt(b.year)
+          return yearB - yearA ;
+        })
+        setMovie(sorted)
+        
+      }
+      
+    })
   },[name])
 
-
+  function loadmore(){
+    setPage(prev => prev+1)
+  }
   return (
     <>
   <Home />
@@ -35,6 +54,7 @@ function Search({setLoader}) {
               
            ))
         }
+        <button className="btn" onClick={loadmore}>Load More..</button>
       </section>
         
     </>

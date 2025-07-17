@@ -25,7 +25,7 @@ function Home() {
       <section className="navbar">
         <div className="search">
           <input type="text" ref={idk} placeholder="Made by Vaibhav, Search a movie here..." />
-          <button onClick={handleSearch} >
+          <button onClick={handleSearch}  >
             Search
           </button>
         </div>

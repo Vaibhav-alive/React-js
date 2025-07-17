@@ -9,7 +9,7 @@ function App() {
   let [loader, setLoader] = useState(false)
   return (
     <>
-    <div className="flex">
+    <div className="h-flex">
       <div className={loader==true? 'loader' : 'none'}></div>
     <div className={loader == true? 'loading': 'd-none'}>Loading....</div>
     </div>
