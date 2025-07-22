@@ -22,6 +22,11 @@ function Home() {
 
   return (
     <>
+    <div className="banner">
+      <div className="icon" />
+      <p className="heading">FrameologyX</p>
+    </div>
+  
       <section className="navbar">
         <div className="search">
           <input type="text" ref={idk} placeholder="Made by Vaibhav, Search a movie here..." />

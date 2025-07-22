@@ -133,7 +133,7 @@ input:focus
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
  
 }
-.main{
+div .main{
   width: 100%;
   padding: 10px;
   display: flex;
@@ -312,7 +312,7 @@ input:focus
   max-width: 1200px;
   display: grid;
   grid-template-columns: .8fr 2fr;
-  gap: 2px;
+  gap: 2rem;
   padding: 1rem;
   margin:2rem auto ;
 }
@@ -346,10 +346,11 @@ input:focus
         }
 .movie-poster{
   /* overflow: hidden; */
-  width: fit-content;
+  width: 400px;
   position: relative;
   border-radius: 22px;
   align-items: center;
+  justify-content: center;
   display: flex;
   gap: 12px;
   transition: transform .2s ease-in-out;
@@ -360,6 +361,7 @@ input:focus
   border-radius: 12px;
   box-shadow: rgba(172, 172, 179, 0.25) 0px 50px 100px -20px, rgba(109, 107, 107, 0.3) 0px 30px 60px -30px;
   height: 80%;
+  width: 100%;
 }
 
 .movie-poster:hover{
@@ -466,4 +468,31 @@ h1{
   padding: 7px 20px;
   font-weight: 800;
   letter-spacing: 2px;
+}
+.icon {
+  background-image: url('./assets/movie.jpg');
+  width: 88px;
+  height: 85px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner{
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  justify-content: space-around;
+  gap: .1rem;
+}
+.heading{
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  font-size: 38px;
+  /* margin: 20px 0 0; */
+  z-index: 2;
+  height: 75px;
+}
+.btn{
+  height: fit-content;
 }

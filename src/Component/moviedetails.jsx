@@ -47,7 +47,9 @@ function Moviedetail() {
         <>
             <Esc />
            <div className="nav">
+            
                 <Home />
+            
            </div>
               
             <div className="movie-details">
