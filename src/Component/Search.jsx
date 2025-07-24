@@ -11,7 +11,7 @@ function Search({ setLoader }) {
   let apikey = '38ae9202'
   let [page, setPage] = useState(1)
   let [error, setError] = useState("")
-  let [errorstatus, setErrorStatus] = useState(false)
+  let [errorstatus, setErrorstatus] = useState(false)
 
   useEffect(() => {
     setLoader(true)
@@ -21,21 +21,23 @@ function Search({ setLoader }) {
       setLoader(false)
       if (data.Response == "True") {
         setError(null)
-        setErrorStatus(false)
-        const sorted = data.Search.sort((a,b)=>{
+        setErrorstatus(false)
+        const sorted = data.Search.sort((a, b) => {
           const yearA = parseInt(a.Year.split("-")[0])
           const yearB = parseInt(b.Year.split("-")[0])
           return yearB - yearA;
         })
-        if(page==1){
+        if (page == 1) {
           setMovie(sorted)
+          // setErrorstatus(false)
+
         }
-        else if(page>1){
-          setMovie((prev)=> [...prev, ...sorted])
+        else if (page > 1) {
+          setMovie((prev) => [...prev, ...sorted])
         }
-      }else {
+      } else {
         setMovie([]);
-        setErrorStatus(true);
+        setErrorstatus(true);
         setError("No movies found...");
       }
     }).catch(err => {
@@ -60,15 +62,21 @@ function Search({ setLoader }) {
           {errorstatus == true ? (
             <div className="error">{error}</div>
           ) : (
-            movie.map((movie) => (
-              <Link to={`/movie/${movie.imdbID}`} key={movie.imdbID}>
-                <Thumb movie={movie} />
-              </Link>
-            ))
+
+            <>
+              <div className="movies-thumb">
+                {movie.map((movie) => (
+                  <Link to={`/movie/${movie.imdbID}`} key={movie.imdbID}>
+                    <Thumb movie={movie} />
+                  </Link>
+                ))}
+              </div>
+
+              <button className="btn" onClick={loadmore}>Load More..</button>
+            </>
           )}
         </div>
 
-        <button className="btn" onClick={loadmore}>Load More..</button>
       </section>
 
     </>

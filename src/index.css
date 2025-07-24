@@ -139,6 +139,7 @@ div .main{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
 }
 .cont{
   display: flex;
@@ -479,9 +480,9 @@ h1{
 .banner{
   display: flex;
   width: 100%;
-  padding: 1rem;
-  justify-content: space-around;
-  gap: .1rem;
+  /* padding: 1rem; */
+  justify-content: center;
+  gap: .2rem;
 }
 .heading{
   text-align: center;
@@ -495,4 +496,9 @@ h1{
 }
 .btn{
   height: fit-content;
+}
+.movies-thumb{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
