@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { Link, Route, Routes } from 'react-router';
 import Thumb from './Thumb'
 import Home from './homethumb';
-import Esc from './Esc';
+import Notfound from '../assets/Not-found.jpg'
 
 function Search({ setLoader }) {
   let { name } = useParams()
@@ -55,12 +55,17 @@ function Search({ setLoader }) {
   if (!movie) return <div>Loading....</div>;
   return (
     <>
-      <Esc />
+      
       <Home />
       <section className="main">
         <div className="main">
           {errorstatus == true ? (
-            <div className="error">{error}</div>
+            <div className="width">
+              <div className="error">
+                <img src={Notfound} alt="" />
+              </div>
+            </div>
+
           ) : (
 
             <>

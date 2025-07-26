@@ -17,12 +17,16 @@ function Home() {
 
   }
 
+  function handleEsc(){
+    navigate('/')
+  }
+
 
 
 
   return (
     <>
-    <div className="banner">
+    <div className="banner" onClick={handleEsc}>
       <div className="icon" />
       <p className="heading">FrameologyX</p>
     </div>
