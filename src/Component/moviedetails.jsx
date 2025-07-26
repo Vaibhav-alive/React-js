@@ -6,10 +6,11 @@ import Home from "./homethumb";
 function Moviedetail() {
     const [vid, setVid] = useState();
     const [title, setTitle] = useState();
+    const[year, setYear] = useState()
     const { id } = useParams();
     const [plot, setPlot] = useState([])
     const [genre, setGenrne] = useState();
-    const name = `${title} + official trailer`;
+    const name = `${title} + ${year} + official trailer`;
     const [movies, setMovies] = useState(null);
 
     const apiKey = "AIzaSyCAuV4sZ0os5P-t4HRCOabpi0pviPUY5cA";
@@ -22,6 +23,7 @@ function Moviedetail() {
             const genrearray = data.Genre.split(",").map((g) => g.trim());
             setGenrne(genrearray);
             setTitle(data.Title)
+            setYear(data.Year)
         });
         fetch(`https://www.omdbapi.com/?apikey=38ae9202&i=${id}&plot=full`).then((plot) => {
             return plot.json();
