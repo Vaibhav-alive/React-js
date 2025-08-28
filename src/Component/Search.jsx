@@ -8,7 +8,7 @@ import Notfound from '../assets/Not-found.jpg'
 function Search({ setLoader }) {
   let { name } = useParams()
   let [movie, setMovie] = useState([])
-  let apikey = '38ae9202'
+  let apikey = '1e399cbd'
   let [page, setPage] = useState(1)
   let [error, setError] = useState("")
   let [errorstatus, setErrorstatus] = useState(false)

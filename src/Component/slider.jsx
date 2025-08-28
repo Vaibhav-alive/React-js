@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
-function Thumb( {movie} ){
+
+function Slider( {movie} ){
     const navigate = useNavigate()
     function navitm(){
         navigate(`/movie/${movie.imdbID}`)
@@ -19,4 +20,4 @@ function Thumb( {movie} ){
     )
 }
 
-export default Thumb;
+export default Slider;

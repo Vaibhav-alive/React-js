@@ -1,12 +1,13 @@
-import { useNavigate, Route, Routes } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useRef, useState } from "react";
-import Search from "./Search";
+import List from "./list";
 
 function Home() {
   const idk = useRef();
   let [loader, setLoader] = useState(false);
   const navigate = useNavigate();
-
+  const location = useLocation();
+ 
 
   function handleSearch() {
     setLoader(true)
@@ -39,8 +40,11 @@ function Home() {
           </button>
         </div>
       </section>
-
-
+    {location.pathname === "/" && (
+        <section className="suggestion">
+          <List />
+        </section>
+      )}
     </>
   );
 }

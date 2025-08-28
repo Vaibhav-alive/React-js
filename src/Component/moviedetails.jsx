@@ -15,7 +15,7 @@ function Moviedetail() {
 
     const apiKey = "AIzaSyCAuV4sZ0os5P-t4HRCOabpi0pviPUY5cA";
     useEffect(() => {
-        fetch(`https://www.omdbapi.com/?apikey=38ae9202&i=${id}`).then((data) => {
+        fetch(`https://www.omdbapi.com/?apikey=1e399cbd&i=${id}`).then((data) => {
             return data.json();
         }).then((data) => {
             setMovies(data);
@@ -25,7 +25,7 @@ function Moviedetail() {
             setTitle(data.Title)
             setYear(data.Year)
         });
-        fetch(`https://www.omdbapi.com/?apikey=38ae9202&i=${id}&plot=full`).then((plot) => {
+        fetch(`https://www.omdbapi.com/?apikey=1e399cbd&i=${id}&plot=full`).then((plot) => {
             return plot.json();
         }).then((plot) => {
             setPlot(plot)
@@ -100,6 +100,7 @@ function Moviedetail() {
                             <div className="stat-value">{movies.Runtime}</div>
                         </div>
                     </div>
+                    
                     <div className="btns">
                         <button className="watch">Watch Trailer Below!!!</button>
                     </div>
