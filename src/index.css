@@ -544,3 +544,17 @@ h1{
   background: linear-gradient(transparent, #213547) ;
   border-radius: 12px;
 }
+.d-cont{
+  width: 100%;
+  height: fit-content;
+  background-color: #3e424d;
+  color: #c1c4c7;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
