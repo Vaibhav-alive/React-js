@@ -243,6 +243,8 @@ div .main{
   flex-wrap: wrap;
   justify-content: center;
   color: white;
+  gap: 5px;
+  /* box-shadow: inset rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
 }
 .t-flex{
   transition: transform .2s ease-in-out;
@@ -252,6 +254,7 @@ div .main{
   width: 200px;
   margin: 10px;
   border-radius: 12px;
+
 
 }
 .t-flex:hover{
@@ -556,4 +559,21 @@ h1{
   display: flex;
   justify-content: center;
   border-radius: 8px;
+}
+.list section{
+  padding: 12px;
+  text-align: center;
+  transition: .2s ease-in-out;
+  box-shadow: inset rgba(43, 42, 42, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.473) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+}
+.list section:hover{
+  transform: scale(1);
+}
+.list section:not(:hover){
+  transform: scale(.8);
+}
+.d-cont{
+  margin: 20px auto;
 }

@@ -54,7 +54,8 @@ function MovieCard({ gid }) {
       });
     }
   }, [ids]);
-
+  if (!details) return <div>Loading!!!</div>
+  if (!cache) return <div>Loading!!!</div>
   return (
     <div className="flex-card">
       {details.map((item, index) =>  (

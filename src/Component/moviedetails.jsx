@@ -44,7 +44,7 @@ function Moviedetail() {
     },[title])
 
     if (!movies) return <div>Loading...</div>;
-    // if (!vid) return <div>Loading...</div>;
+    if (!vid) return <div>Loading...</div>;
     return (
         <>
 
