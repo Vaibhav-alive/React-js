@@ -57,7 +57,7 @@ function Search({ setLoader }) {
     <>
       
       <Home />
-      <section className="main">
+      <section className="main-cont">
         <div className="main">
           {errorstatus == true ? (
             <div className="width">
