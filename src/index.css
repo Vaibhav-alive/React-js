@@ -528,8 +528,9 @@ h1{
 }
 .list{
   display: flex;
-  flex-direction: column;
-  gap: 15px;
+  overflow-x: hidden;
+  gap: 5px;
+  transition: .4s ease;
 }
 .list h2{
   margin-bottom: 5px;
@@ -561,6 +562,9 @@ h1{
   border-radius: 8px;
 }
 .list section{
+  opacity: 0;
+  scroll-snap-align: center;
+  width: 100%;
   padding: 12px;
   text-align: center;
   transition: .2s ease-in-out;
@@ -568,12 +572,52 @@ h1{
   margin-bottom: 12px;
   border-radius: 16px;
 }
+.list section.show{
+  opacity: 1;
+}
+.list::scroll-button(right), .list::scroll-button(left){
+  content: '→';
+  font-family: Consolas;
+  /* padding: 3px; */
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: none;
+  font-size: 3rem;
+  background-color: #535bf2;
+  color: white;
+  padding-bottom: .3rem;
+  font-weight: 900;
+  cursor: pointer;
+  position: fixed;
+  position-anchor: --list;
+  position-area: center right;
+    translate: -50%;
+    z-index: 2;
+}
+.list::scroll-button(left){
+  content: '←';
+  position-area: center left;
+  translate: 50%;
+}
+.list::scroll-button(right):disabled, .list::scroll-button(left):disabled{
+  opacity: .5;
+  cursor: none;
+}
+.list{
+  scroll-behavior: smooth;
+  anchor-name: --list;
+  scroll-snap-type: x mandatory;
+}
 .list section:hover{
   transform: scale(1);
 }
 .list section:not(:hover){
-  transform: scale(.8);
+  transform: scale(.9);
 }
 .d-cont{
   margin: 20px auto;
+}
+.list{
+  display: flex;
 }
